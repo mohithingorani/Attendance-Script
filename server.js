@@ -78,7 +78,7 @@ const sendAttendanceEmail = async () => {
         console.error('An error occurred:', error.message);
     }
 };
-
+console.log("started server");
 // Schedule the task to run every day at 8:00 AM
 cron.schedule('0 8 * * *', () => {
     console.log('Running the scheduled task...');
