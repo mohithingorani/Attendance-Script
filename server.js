@@ -21,7 +21,7 @@ const sendAttendanceEmail = async () => {
         await page.goto('https://mujslcm.jaipur.manipal.edu/', { waitUntil: 'networkidle2' });
 
         console.log('Logging in...');
-        await page.type('#txtUserName', process.env.USERNAME);
+        await page.type('#txtUserName', "mohit.229310069");
         await page.type('#txtPassword', process.env.PASSWORD);
         await page.click('#login_submitStudent');
 
