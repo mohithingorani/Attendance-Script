@@ -9,8 +9,8 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 const sendAttendanceEmail = async () => {
     try {
         const browser = await puppeteer.launch({
-            headless: false,
-            executablePath: 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
+            headless: true,
+            executablePath: '/usr/bin/chromium-browser',
             args: ['--no-sandbox', '--disable-setuid-sandbox', '--start-maximized'],
         });
 
@@ -79,9 +79,6 @@ const sendAttendanceEmail = async () => {
     }
 };
 console.log("started server");
-// Schedule the task to run every day at 8:00 AM
-cron.schedule('0 8 * * *', () => {
-    console.log('Running the scheduled task...');
-    sendAttendanceEmail();
-});
+console.log('Running the scheduled task...');
+sendAttendanceEmail();
 
