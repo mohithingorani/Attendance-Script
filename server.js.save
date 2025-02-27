@@ -10,7 +10,7 @@ const sendAttendanceEmail = async () => {
   try {
     const browser = await puppeteer.launch({
       headless: true,
-      executablePath: "//snap//bin//chromium",
+      executablePath: "//us/r/bin/chromium-browser",
       args: ["--no-sandbox"],
     });
 
@@ -36,9 +36,9 @@ const sendAttendanceEmail = async () => {
     );
 
     console.log("Waiting for Attendance Table...");
-    await page.waitForSelector("#dvDetail", {
+    await page.waitForSelector("#dvDetail > div", {
       visible: true,
-      timeout: 120000,
+      timeout: 60000,
     });
 
     console.log("Extracting attendance data...");
