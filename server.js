@@ -19,7 +19,7 @@ const sendAttendanceEmail = async () => {
   try {
     browser = await puppeteer.launch({
       headless: false,
-      executablePath: "//us/r/bin/chromium-browser",
+      executablePath: "/usr/bin/chromium-browser",
       args: ["--no-sandbox", "--disable-setuid-sandbox"],
     });
 

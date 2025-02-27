@@ -10,7 +10,7 @@ const sendAttendanceEmail = async () => {
   try {
     const browser = await puppeteer.launch({
       headless: true,
-      executablePath: "//us/r/bin/chromium-browser",
+      executablePath: "//user/bin/chromium-browser",
       args: ["--no-sandbox"],
     });
 
